@@ -4,13 +4,20 @@ import gameworld.Entity;
 
 public abstract class HealPotion implements HealingGoods{
 
-    static int  hitPointToRestore;
+   final private  int  hitPointToRestore;
 
-    @Override
-    public void restoreHealth(Entity entity) {
+    public HealPotion (int hitPointToRestore){
+        this.hitPointToRestore=hitPointToRestore;
+    }
 
+    public int potionStrength(){
+      return  this.hitPointToRestore;
     }
 
 
+    public void restoreHealth(HealingGoods hp, Entity entity) {
+        entity.setHealth(hp);
+
+    }
 
 }

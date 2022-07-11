@@ -18,7 +18,7 @@ public class Entity {
     }
 
     public void setHealth(HealingGoods hp) {
-        this.health+=hp.hitPointToRestore;
+        this.health+= hp.potionStrength();
     }
 
 

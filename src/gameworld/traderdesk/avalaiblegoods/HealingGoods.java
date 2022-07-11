@@ -4,7 +4,9 @@ import gameworld.Entity;
 
 public interface HealingGoods {
 
-    public void restoreHealth(Entity entity);
+     void restoreHealth(HealingGoods hp, Entity entity);
+
+     int potionStrength();
 
 
 }

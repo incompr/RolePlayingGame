@@ -1,22 +1,22 @@
 package gameworld.traderdesk.avalaiblegoods;
 
-import gameworld.Entity;
+import gameworld.characters.GameCharacter;
 
 public abstract class HealPotion implements HealingGoods{
 
-   final private  int  hitPointToRestore;
+   final private  int healthPointToRestore;
 
-    public HealPotion (int hitPointToRestore){
-        this.hitPointToRestore=hitPointToRestore;
+    public HealPotion (int healthPointToRestore){
+        this.healthPointToRestore = healthPointToRestore;
     }
 
     public int potionStrength(){
-      return  this.hitPointToRestore;
+      return  this.healthPointToRestore;
     }
 
 
-    public void restoreHealth(HealingGoods hp, Entity entity) {
-        entity.setHealth(hp);
+    public static void restoreHealth(HealingGoods hp, GameCharacter gameCharacter) {
+        gameCharacter.setHealth(hp);
 
     }
 

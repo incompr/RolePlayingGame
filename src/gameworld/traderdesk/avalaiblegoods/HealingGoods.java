@@ -1,12 +1,12 @@
 package gameworld.traderdesk.avalaiblegoods;
 
-import gameworld.Entity;
+import gameworld.characters.GameCharacter;
 
 public interface HealingGoods {
 
-     void restoreHealth(HealingGoods hp, Entity entity);
 
-     int potionStrength();
+
+    int potionStrength();
 
 
 }

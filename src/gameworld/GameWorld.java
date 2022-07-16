@@ -1,13 +1,8 @@
 package gameworld;
 
-import gameworld.characters.GameCharacter;
-import gameworld.characters.Player;
-import gameworld.characters.Trader;
-import gameworld.mechanics.Battle;
-import gameworld.mechanics.RandomValueGenerator;
-import gameworld.traderdesk.avalaiblegoods.BigHealPotion;
-import gameworld.traderdesk.avalaiblegoods.SmallHealPotion;
-
+import gameworld.characters.*;
+import gameworld.mechanics.*;
+import gameworld.traderdesk.avalaiblegoods.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,11 +10,9 @@ import java.io.InputStreamReader;
 
 
 public class GameWorld {
-    //  private static boolean player;
     private static GameCharacter player = null;
     public static BufferedReader br;
     public static Trader trader;
-
 
     public static void main(String[] args) {
         //GameWorld gameWorld = new GameWorld();
@@ -36,10 +29,7 @@ public class GameWorld {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
-
 
     public static void userInput(String consoleInput) throws IOException {
 
@@ -50,7 +40,6 @@ public class GameWorld {
             moveOption();
         }
 
-        //Варианты для команд
         switch (consoleInput) {
             case "1" -> {
                 player.isCharacterInShop = true;

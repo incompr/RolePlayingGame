@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Trader extends NPC implements Trading {
 
+    /*for future use*/
     List<String> traderDesk = new ArrayList<>();
 
 
@@ -16,12 +17,9 @@ public class Trader extends NPC implements Trading {
 
     }
 
-
     @Override
     public String sell(Player player, HealingGoods hp) {
         return null;
     }
-
-
 
 }

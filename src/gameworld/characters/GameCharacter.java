@@ -37,7 +37,7 @@ public abstract class GameCharacter implements Fighting {
 
 
     public int attack() {
-        if (((this.agility * 3) > RandomValueGenerator.generateRandom()) && (RandomValueGenerator.generateRandom() > ((this.agility*3)*0.9))) {
+        if (((this.agility * 3) > RandomValueGenerator.generateRandom()) && (RandomValueGenerator.generateRandom() > ((this.agility * 3) * 0.9))) {
             System.out.println("!!!Critical Strike!!!");
             return this.strength * 3;
         } else if ((this.agility * 3) > RandomValueGenerator.generateRandom()) {
@@ -45,10 +45,6 @@ public abstract class GameCharacter implements Fighting {
         } else return 0;
 
     }
-
-
-    // public GameCharacter create() ;
-
 
     public void setHealth(HealingGoods hp) {
         this.health += hp.potionStrength();
@@ -60,18 +56,6 @@ public abstract class GameCharacter implements Fighting {
 
     public String getName() {
         return this.name;
-    }
-
-
-    public String printStatus() {
-        return this.getName() + ", Status: " + "exp: " + this.exp + ", gold: " + this.goldAmount + ", HP: " + this.health + ", Strength: " + this.strength + ", Agility: " + this.agility;
-
-    }
-
-
-    @Override
-    public String toString() {
-        return "Name: " + name + " Health Points: " + this.health;
     }
 
     public int getXp() {
@@ -88,7 +72,6 @@ public abstract class GameCharacter implements Fighting {
 
     public void setHealthPoints(int healthPoints) {
         this.health = healthPoints;
-
     }
 
     public void setXp(int exp) {
@@ -100,4 +83,16 @@ public abstract class GameCharacter implements Fighting {
         this.goldAmount += gold;
 
     }
+
+    public String printStatus() {
+        return this.getName() + ", Status: " + "exp: " + this.exp + ", gold: " + this.goldAmount + ", HP: " + this.health + ", Strength: " + this.strength + ", Agility: " + this.agility;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + " Health Points: " + this.health;
+    }
+
+
 }

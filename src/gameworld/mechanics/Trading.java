@@ -6,8 +6,7 @@ import gameworld.traderdesk.avalaiblegoods.HealingGoods;
 
 public interface Trading {
 
+    /*for future use*/
     String sell(Player player, HealingGoods hp);
-
-
 
 }

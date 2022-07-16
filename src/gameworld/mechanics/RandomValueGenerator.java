@@ -13,10 +13,10 @@ public class RandomValueGenerator {
     public static GameCharacter generateMonster() {
 
         if (((int) (Math.random() * 100)) > 50)
-            return new Goblin(40, 10, (byte) 10, (byte) 100, 2);
+            return new Goblin(40, 10, (byte) 10, (byte) 5, 2);
 
         else
-            return new Skeleton( 20, 5, (byte) 20, (byte) 100, 1);
+            return new Skeleton(20, 5, (byte) 20, (byte) 10, 1);
 
     }
 

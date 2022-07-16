@@ -37,9 +37,10 @@ public abstract class GameCharacter implements Fighting {
 
 
     public int attack() {
-        if ((RandomValueGenerator.generateRandom() < 3) && this.agility * 3 > RandomValueGenerator.generateRandom()) {
-            return this.strength * 2;
-        } else if (this.agility * 3 > RandomValueGenerator.generateRandom()) {
+        if (((this.agility * 3) > RandomValueGenerator.generateRandom()) && (RandomValueGenerator.generateRandom() > ((this.agility*3)*0.9))) {
+            System.out.println("!!!Critical Strike!!!");
+            return this.strength * 3;
+        } else if ((this.agility * 3) > RandomValueGenerator.generateRandom()) {
             return this.strength;
         } else return 0;
 
@@ -63,7 +64,7 @@ public abstract class GameCharacter implements Fighting {
 
 
     public String printStatus() {
-        return this.getName() + ", " + "exp: " + this.exp + ", gold: " + this.goldAmount + ", HP: " + this.health + ", Strength: " + this.strength + ", Agility: " + this.agility;
+        return this.getName() + ", Status: " + "exp: " + this.exp + ", gold: " + this.goldAmount + ", HP: " + this.health + ", Strength: " + this.strength + ", Agility: " + this.agility;
 
     }
 

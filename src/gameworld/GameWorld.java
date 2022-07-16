@@ -18,7 +18,6 @@ public class GameWorld {
     //  private static boolean player;
     private static GameCharacter player = null;
     public static BufferedReader br;
-    private static Battle battle;
     public static Trader trader;
 
 
@@ -61,17 +60,17 @@ public class GameWorld {
             }
             case "2" -> {
                 player.isCharacterInShop = false;
-                battle = new Battle((Player) player, RandomValueGenerator.generateMonster());
-                Battle.fightingWithMonster();
+                Battle battle = new Battle((Player) player, RandomValueGenerator.generateMonster());
+                battle.fightingWithMonster();
 
             }
             case "3" -> System.exit(1);
-            case "Y" -> userInput("2");
-            case "N" -> {
+            case "y" -> userInput("2");
+            case "n" -> {
                 moveOption();
                 userInput(br.readLine());
             }
-            case "S" -> {
+            case "s" -> {
                 if (player.isCharacterInShop && player.health < 90) {
                     SmallHealPotion.restoreHealth(new SmallHealPotion(), player);
                     System.out.println(player.printStatus());
@@ -85,7 +84,7 @@ public class GameWorld {
                 }
 
             }
-            case "B" -> {
+            case "b" -> {
                 if (player.isCharacterInShop && player.health < 50) {
                     BigHealPotion.restoreHealth(new BigHealPotion(), player);
                     System.out.println(player.printStatus());
@@ -98,7 +97,7 @@ public class GameWorld {
                     moveOption();
                 }
             }
-            case "E" -> {
+            case "e" -> {
                 if (player.isCharacterInShop) {
                     moveOption();
                 }
@@ -118,9 +117,9 @@ public class GameWorld {
     }
 
     private static void sellOption() {
-        System.out.println("S. Small one");
-        System.out.println("B. Big one");
-        System.out.println("E. Exit");
+        System.out.println("s. Small one");
+        System.out.println("b. Big one");
+        System.out.println("e. Exit from shop");
 
     }
 

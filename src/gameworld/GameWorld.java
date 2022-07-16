@@ -15,14 +15,11 @@ public class GameWorld {
     public static Trader trader;
 
     public static void main(String[] args) {
-        //GameWorld gameWorld = new GameWorld();
-        System.out.println("And the world is not Enough");
+        System.out.println("The world is not Enough");
 
         br = new BufferedReader(new InputStreamReader(System.in));
         //NPC Generating
         trader = new Trader("Trader", 100, 10000, (byte) 5, (byte) 5, 0);
-        //   battle = new Battle();
-
         System.out.println("Input your character name:");
         try {
             userInput(br.readLine());
